@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://fb.me/react-15.2.1.js"></script>
+    <script src="https://fb.me/react-dom-15.2.1.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+    <title>React Components</title>
+</head>
+
+<body>
+    <div id='react-container'></div>
+    <script type="text/babel">
+
+            class Test extends React.Component{
+                mend(){
+                    alert("Edit the content!")
+                }
+
+                delete(){
+                    alert("Delete the content!")
+                }
+
+                render(){
+                    return(
+                        <div className="note">
+                           <p>{this.props.children}</p>
+                           <span>
+                            <button onClick={this.mend}>Edit</button>
+                            <button onClick={this.delete}>X</button>
+                           </span>
+                        </div>
+                    )
+                }
+            }
+
+            const root = document.getElementById("react-container");
+           ReactDOM.render(<Test>S'up bitch</Test>, root);
+        </script>
+</body>
+
+</html>
